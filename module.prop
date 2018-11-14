@@ -1,7 +1,7 @@
-id=template
-name=Template Module
-version=v1
-versionCode=1
-author=topjohnwu
-description=A short description
+id=Mi6-MIRoaming-Systemless
+name=Mi6 MIRoaming Systemless
+version=8.11.1
+versionCode=20181101
+author=ysc3839
+description=Bring MI Roaming (chinese version) to MIUI Global.
 minMagisk=1500

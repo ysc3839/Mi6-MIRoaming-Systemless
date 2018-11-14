@@ -40,9 +40,9 @@ LATESTARTSERVICE=false
 # Set what you want to show when installing your mod
 
 print_modname() {
-  ui_print "*******************************"
-  ui_print "     Magisk Module Template    "
-  ui_print "*******************************"
+  ui_print "********************************"
+  ui_print "    Mi6 MIRoaming Systemless    "
+  ui_print "********************************"
 }
 
 ##########################################################################################
@@ -63,6 +63,7 @@ REPLACE="
 # Construct your own list here, it will override the example above
 # !DO NOT! remove this if you don't need to replace anything, leave it empty as it is now
 REPLACE="
+/system/app/VirtualSim
 "
 
 ##########################################################################################
