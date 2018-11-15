@@ -10,6 +10,25 @@ rm system.transfer.list system.new.dat
 7z x -osystem system.img app/VirtualSim || exit 1
 rm system.img
 
+pushd system/app/VirtualSim
+  ../../../vdexExtractor -i oat/arm64/VirtualSim.vdex -o . || exit 1
+  rm -r oat
+
+  java -jar ../../../baksmali-2.2.5.jar disassemble --debug-info false -o smali VirtualSim_classes.dex || exit 1
+
+  pushd smali/com/miui/virtualsim/utils
+    name=$(grep -rl IS_INTERNATIONAL_BUILD)
+    [ $? -eq 0 ] && sed -i 's|sget-boolean \([a-z][0-9]\+\), Lmiui/os/Build;->IS_INTERNATIONAL_BUILD:Z|const/4 \1, 0x0|g' $name
+  popd
+
+  java -jar ../../../smali-2.2.5.jar a -a 26 smali -o classes.dex
+  rm -r smali
+  rm VirtualSim_classes.dex
+
+  zip VirtualSim.apk classes.dex
+  rm classes.dex
+popd
+
 mv system/app/VirtualSim system/app/Virtua1Sim
 
 find -exec touch -d @1230768000 -h {} +
