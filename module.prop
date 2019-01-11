@@ -1,7 +1,7 @@
 id=Mi6-MIRoaming-Systemless
 name=Mi6 MIRoaming Systemless
-version=8.12.27
-versionCode=20181227
+version=9.1.10
+versionCode=20190110
 author=ysc3839
 description=Bring MI Roaming (chinese version) to MIUI Global.
 minMagisk=1500
