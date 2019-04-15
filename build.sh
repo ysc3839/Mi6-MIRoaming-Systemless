@@ -31,7 +31,7 @@ popd
 
 mv system/app/VirtualSim system/app/Virtua1Sim
 
-find -exec touch -d @1230768000 -h {} +
+find -exec touch -d @0 -h {} +
 find -type d -exec chmod 0755 {} +
 find -type f -exec chmod 0644 {} +
 
