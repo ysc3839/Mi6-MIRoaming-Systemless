@@ -25,8 +25,10 @@ pushd system/app/VirtualSim
   rm -r smali
   rm VirtualSim_classes.dex
 
-  zip VirtualSim.apk classes.dex
-  rm classes.dex
+  mv VirtualSim_classes2.dex classes2.dex
+
+  zip VirtualSim.apk classes.dex classes2.dex
+  rm classes.dex classes2.dex
 popd
 
 mv system/app/VirtualSim system/app/Virtua1Sim
