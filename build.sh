@@ -21,6 +21,10 @@ pushd system/app/VirtualSim
     [ $? -eq 0 ] && sed -i 's|sget-boolean \([a-z][0-9]\+\), Lmiui/os/Build;->IS_INTERNATIONAL_BUILD:Z|const/4 \1, 0x0|g' $name
   popd
 
+  pushd smali/com/miui/mimobile/utils
+    sed -i 's/su"/noexistsu"/g' RootUtil.smali
+  popd
+
   java -jar ../../../smali-2.2.5.jar a -a 26 smali -o classes.dex
   rm -r smali
   rm VirtualSim_classes.dex
